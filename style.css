@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Ubuntu:wght@300;400;500;700&display=swap');
+
+:root {
+	--ubuntu: 'Ubuntu', sans-serif;
+	--suse: 'SUSE', sans-serif;
+	--inter: 'Inter', sans-serif;
+
+	--marromcl:#b79e8f;
+	--marrom:#957151;
+	--bege:#f5f2ed;
+	--dourado:#c4a367;
+
+	--vermelho:#bc3a37;
+	--laranja:#DB9E3F;
+	--verde:#629858;
+	--fundo:#ECEDEA;
+	--cinza:#d9d9d9;
+	--fontcolor: #5d5d5d;
+	--border-color: #f0f0f0;
+}
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+a {text-decoration: none;}
+li {list-style: none;}
+html {overflow-x: hidden;}
+body {background: var(--fundo); overflow-x: hidden; user-select: none; scrollbar-width: none;}
