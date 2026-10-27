@@ -1,53 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Sniglet:wght@400;800&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sniglet:wght@400;800&display=swap');
 
 :root {
-	--sniglet: 'Sniglet', sans-serif;
-	--sour-gummy: 'Sour Gummy', sans-serif;
+	--sniglet: 'Sniglet', system-ui;
+	--roboto: "Roboto", sans-serif;
+	--inter: "Inter", sans-serif;
 
-	--marromcl:#b79e8f;
-	--marrom:#957151;
-	--bege:#f5f2ed;
-	--dourado:#c4a367;
-
-	--rosacl:#ebb9ce;
-	--rosa:#985974;
-	--esc:#0E0E0E;
-	--vermelho:#bc3a37;
-	--laranja:#DB9E3F;
-	--verde:#629858;
-	--fundo:#ECEDEA;
-	--cinza:#d9d9d9;
+	--azul:#014399;
 	--fontcolor: #5d5d5d;
-	--border-color: #f0f0f0;
 }
 
 * {margin: 0; padding: 0; box-sizing: border-box;}
 a {text-decoration: none;}
 li {list-style: none;}
 html {overflow-x: hidden;}
-body {background: var(--fundo); overflow-x: hidden; user-select: none; scrollbar-width: none; font-family: var(--sour-gummy); color: var(--fontcolor);}
+body {background: #000411; overflow-x: hidden; user-select: none; scrollbar-width: none; font-family: var(--roboto); color: var(--fontcolor);}
 
 
 
 #navbar {
 	position: sticky;
 	width: 100%;
-    justify-items: center;
-    color: var(--esc);
-	font-family: var(--sour-gummy);
-    height: 4rem;
-	padding: 0.5rem 3rem 0.4rem 3rem;
+    height: 8rem;
+	padding: 0.8rem 3rem 0rem 3rem;
 
 	z-index: 2000;
-	background: var(--rosacl);
-	/*background: #111111;*/
 	transition: .3s ease;
 	scrollbar-width: none;
-	align-content: space-between;
-	border-bottom: 3px solid var(--esc);
-}
-#navbar::--webkit-scrollbar {
-	display: none;
+	border-bottom: 3px solid;
+	border-image: linear-gradient(90deg, rgb(2, 0, 36) 0%, rgba(1, 67, 153, 1) 35%, rgba(0, 212, 255, 1) 100%) 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 nav {
 	width: 100%;
@@ -58,6 +41,7 @@ nav {
 #navbar .navpag {
     display: flex;
     align-items: center;
+	justify-content: center;
     width: 100%;
     overflow-x: auto;
 	scrollbar-width: none;
@@ -69,32 +53,123 @@ nav {
     display: flex;
     flex-direction: row;
     align-items: center;
+	justify-content: center;
     gap: 36px;
-	padding: 0;
-    margin: 0;
     white-space: nowrap;
 }
+#navbar .navpag ul .logo {
+	width: 360px;
+}
 .nav-link {
-    color: var(--esc);
+    color: white;
     font-weight: 600;
     transition: color 0.2s ease;
     display: flex;
     align-items: center;
     gap: 8px;
     padding: 10px 8px;
-	font-size: 20px;
-
-    border: 2px dotted var(--rosacl);
-	border-radius: 8px;
+	font-size: 18px;
 }
 .nav-item.active .nav-link {
-	color: white;
-    border: 2px solid var(--rosacl);
-	background: var(--esc);
+	color: var(--azul);
     padding: 2px 8px;
-	border-radius: 8px;
 }
 .nav-link:hover {
-    color: white;
+    color: var(--azul);
 	padding: 2px 8px;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: calc(100vh - 8rem);
+	padding: 4rem 6rem;
+}
+
+#resume {
+	width: 100%;
+	max-width: 50rem;
+	display: flex;
+	flex-direction: row;
+	overflow: hidden;
+
+	border-radius: 40px;
+	border: 3px solid transparent;
+	background-image:
+		linear-gradient(#050f24, #050f24),
+    	linear-gradient(90deg, rgb(2, 0, 36) 0%, rgba(1, 67, 153, 1) 35%, rgba(0, 212, 255, 1) 100%);
+	background-origin: border-box;
+	background-clip: content-box, border-box;
+	margin-bottom: 6rem;
+
+}
+#resume .img-res {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	border-right: 3px solid var(--azul);
+}
+#resume .img-res img {
+	height: 320px;
+	object-fit: cover;
+}
+#resume .text-res {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem;
+
+	user-select: text;
+	font-family: monospace;
+	font-weight: bold;
+	font-size: 17px;
+	line-height: 1.5;
+	color: #979797;
+}
+#resume .text-res .textcont .tag,
+#resume .text-res .textcont .string {
+	color: #00d4ff;
+}
+#resume .text-res .textcont .var {
+	margin-left: 1.5rem;
+}
+#resume .text-res .textcont {
+	padding-bottom: 2rem;
+	margin-bottom: 2rem;
+	border-bottom: 1px solid var(--azul);
+}
+
+#cont {
+	width: 100%;
+	max-width: 50rem;
+	margin-bottom: 4rem;
+}
+.contitle {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	gap: 1rem;
+	margin-bottom: 2rem;
+	font-size: 20px;
+	color: white;
+}
+.line {
+	height: 1px;
+	flex: 1;
+	background: linear-gradient(to right, transparent, var(--azul), transparent);
+}
+.sobretxt {
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 1.5;
+	color: #979797;
+}
+.tech {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px;
 }
